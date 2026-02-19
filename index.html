@@ -1,305 +1,303 @@
+Bilkul Sahil! Agar "sundar" aur "AI touch" chahiye, toh hume standard design se hatkar Glassmorphism, Gradients, aur Floating Animations ka use karna hoga.
+
+Maine is version mein Dark Mode Aesthetic rakha hai jo aaj kal ki AI aur Tech companies use karti hain. Isme background mein moving gradients aur cards par glass effect hai.
+
+Ye raha aapka upgraded "Ultra-Modern" Digital Marketing Portfolio:
+
+HTML
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sahil Thakur | Digital Marketing Expert</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Sahil Thakur | AI-Powered Digital Marketer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         :root {
-            --primary-color: #2563eb; /* Royal Blue */
-            --secondary-color: #0f172a; /* Dark Navy */
-            --accent-color: #38bdf8; /* Sky Blue */
-            --text-light: #ffffff;
-            --text-dark: #333;
+            --bg-dark: #050505;
+            --glass: rgba(255, 255, 255, 0.05);
+            --border-glass: rgba(255, 255, 255, 0.1);
+            --primary-gradient: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
+            --accent: #00f2ff;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Space Grotesk', sans-serif;
+            scroll-behavior: smooth;
         }
 
         body {
-            line-height: 1.6;
-            color: var(--text-dark);
-            background-color: #f8fafc;
+            background-color: var(--bg-dark);
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* Animated Background Blobs */
+        .blob {
+            position: fixed;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+            border-radius: 50%;
+            z-index: -1;
+            filter: blur(80px);
+            animation: move 20s infinite alternate;
+        }
+
+        @keyframes move {
+            from { transform: translate(-10%, -10%); }
+            to { transform: translate(50%, 50%); }
         }
 
         /* Navigation */
         nav {
-            background: rgba(255, 255, 255, 0.95);
-            padding: 1rem 10%;
+            padding: 20px 8%;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            backdrop-filter: blur(10px);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-bottom: 1px solid var(--border-glass);
         }
 
         .logo {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             font-weight: 700;
-            color: var(--primary-color);
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-
-        .nav-links li {
-            margin-left: 2rem;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--secondary-color);
-            font-weight: 500;
-            transition: 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary-color);
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         /* Hero Section */
         .hero {
             height: 100vh;
-            background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
             display: flex;
-            align-items: center;
+            flex-direction: column;
             justify-content: center;
+            align-items: center;
             text-align: center;
-            color: white;
-            padding: 0 20px;
+            padding: 0 10%;
         }
 
-        .hero-content h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            animation: fadeInDown 1s ease;
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 5rem);
+            line-height: 1.1;
+            margin-bottom: 20px;
         }
 
-        .hero-content p {
+        .gradient-text {
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: block;
+        }
+
+        .hero p {
             font-size: 1.2rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
+            color: #94a3b8;
+            max-width: 600px;
+            margin-bottom: 30px;
         }
 
-        .btn {
-            background: var(--accent-color);
-            color: var(--secondary-color);
-            padding: 12px 30px;
-            text-decoration: none;
+        /* CTA Button with Glow */
+        .btn-glow {
+            padding: 15px 40px;
+            background: var(--primary-gradient);
+            border: none;
             border-radius: 50px;
+            color: white;
             font-weight: 600;
+            text-decoration: none;
+            position: relative;
             transition: 0.3s;
-            display: inline-block;
+            box-shadow: 0 0 20px rgba(168, 85, 247, 0.4);
         }
 
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        .btn-glow:hover {
+            box-shadow: 0 0 40px rgba(168, 85, 247, 0.7);
+            transform: scale(1.05);
         }
 
-        /* Services Section */
+        /* Services Glass Cards */
         .services {
             padding: 100px 10%;
-            text-align: center;
         }
 
-        .section-title {
-            margin-bottom: 50px;
-        }
-
-        .section-title h2 {
-            font-size: 2.5rem;
-            color: var(--secondary-color);
-        }
-
-        .services-grid {
+        .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
+            margin-top: 50px;
         }
 
-        .service-card {
-            background: white;
+        .card {
+            background: var(--glass);
             padding: 40px;
-            border-radius: 15px;
-            transition: 0.3s;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border-radius: 24px;
+            border: 1px solid var(--border-glass);
+            transition: 0.4s;
+            position: relative;
+            overflow: hidden;
         }
 
-        .service-card:hover {
+        .card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: var(--accent);
             transform: translateY(-10px);
-            border-bottom: 5px solid var(--primary-color);
         }
 
-        .service-card i {
-            font-size: 3rem;
-            color: var(--primary-color);
+        .card i {
+            font-size: 2.5rem;
             margin-bottom: 20px;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        /* Stats Section */
-        .stats {
-            background: var(--secondary-color);
-            color: white;
-            padding: 80px 10%;
+        /* Stats with AI feel */
+        .stats-bar {
+            background: var(--glass);
+            margin: 50px 10%;
+            border-radius: 30px;
             display: flex;
             justify-content: space-around;
-            flex-wrap: wrap;
-            text-align: center;
-        }
-
-        .stat-item h3 {
-            font-size: 2.5rem;
-            color: var(--accent-color);
-        }
-
-        /* Contact Section */
-        .contact {
-            padding: 100px 10%;
-            background: #fff;
-        }
-
-        .contact-container {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .contact-form input, .contact-form textarea {
-            width: 100%;
-            padding: 15px;
-            margin-bottom: 20px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-        }
-
-        .submit-btn {
-            background: var(--primary-color);
-            color: white;
-            border: none;
-            padding: 15px 40px;
-            border-radius: 8px;
-            cursor: pointer;
-            width: 100%;
-            font-size: 1rem;
-        }
-
-        /* Footer */
-        footer {
-            background: var(--secondary-color);
-            color: white;
-            text-align: center;
             padding: 40px;
+            border: 1px solid var(--border-glass);
         }
 
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-30px); }
-            to { opacity: 1; transform: translateY(0); }
+        .stat-box h2 {
+            font-size: 3rem;
+            color: var(--accent);
         }
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero-content h1 { font-size: 2.5rem; }
-            .nav-links { display: none; }
+        /* Contact Form Modern */
+        .contact-box {
+            background: var(--glass);
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 50px;
+            border-radius: 30px;
+            border: 1px solid var(--border-glass);
+        }
+
+        input, textarea {
+            width: 100%;
+            background: rgba(0,0,0,0.3);
+            border: 1px solid var(--border-glass);
+            padding: 15px;
+            border-radius: 12px;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        /* Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: 1s all ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
 <body>
 
+    <div class="blob"></div>
+
     <nav>
-        <div class="logo">SahilThakur.</div>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+        <div class="logo">SAHIL.AI</div>
+        <a href="#contact" class="btn-glow" style="padding: 10px 25px;">Let's Connect</a>
     </nav>
 
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <h1>Grow Your Business Digitally</h1>
-            <p>I help brands scale using Data-Driven Digital Marketing Strategies.</p>
-            <a href="#contact" class="btn">Get Free Consultation</a>
-        </div>
+    <section class="hero">
+        <h1 class="reveal active">Modern Problems Require <span class="gradient-text">Digital Solutions.</span></h1>
+        <p class="reveal active">Hi, I'm Sahil Thakur. I blend AI tools with Digital Marketing to skyrocket your brand's ROI across multiple industries.</p>
+        <a href="#work" class="btn-glow reveal active">View My Magic</a>
     </section>
 
-    <section class="stats">
-        <div class="stat-item">
-            <h3>50+</h3>
-            <p>Projects Done</p>
+    <div class="stats-bar reveal">
+        <div class="stat-box">
+            <h2>12+</h2>
+            <p>Niches Explored</p>
         </div>
-        <div class="stat-item">
-            <h3>10+</h3>
-            <p>Categories Handled</p>
+        <div class="stat-box">
+            <h2>500%</h2>
+            <p>Avg. Growth</p>
         </div>
-        <div class="stat-item">
-            <h3>100%</h3>
-            <p>Client Satisfaction</p>
+        <div class="stat-box">
+            <h2>AI</h2>
+            <p>Driven Strategies</p>
         </div>
-    </section>
+    </div>
 
-    <section class="services" id="services">
-        <div class="section-title">
-            <h2>Our Specialized Services</h2>
-            <p>Tailored solutions for different business categories</p>
-        </div>
-        <div class="services-grid">
-            <div class="service-card">
-                <i class="fas fa-search-dollar"></i>
-                <h3>SEO Optimization</h3>
-                <p>Google ke top page par rank karne ke liye best techniques.</p>
+    <section class="services" id="work">
+        <h2 style="text-align: center; font-size: 3rem;">Expertise</h2>
+        <div class="grid">
+            <div class="card reveal">
+                <i class="fas fa-brain"></i>
+                <h3>AI Content Marketing</h3>
+                <p>Generating high-converting content using advanced AI prompt engineering.</p>
             </div>
-            <div class="service-card">
-                <i class="fas fa-ad"></i>
-                <h3>Paid Campaigns (PPC)</h3>
-                <p>Facebook and Google ads se instant leads aur sales generate karein.</p>
+            <div class="card reveal">
+                <i class="fas fa-rocket"></i>
+                <h3>Precision SEO</h3>
+                <p>Rankings that don't just bring traffic, but bring the *right* customers.</p>
             </div>
-            <div class="service-card">
-                <i class="fab fa-instagram"></i>
-                <h3>Social Media</h3>
-                <p>Aapke brand ki presence Instagram, LinkedIn aur FB par boost karein.</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-chart-line"></i>
-                <h3>Content Strategy</h3>
-                <p>Aisa content jo aapke customers ko engage kare aur convert kare.</p>
+            <div class="card reveal">
+                <i class="fas fa-microchip"></i>
+                <h3>Performance Marketing</h3>
+                <p>Data-backed ad campaigns with minimal waste and maximum conversion.</p>
             </div>
         </div>
     </section>
 
     <section class="contact" id="contact">
-        <div class="section-title">
-            <h2>Let's Talk Growth</h2>
-            <p>Fill the form below to get a custom strategy for your business.</p>
-        </div>
-        <div class="contact-container">
-            <form class="contact-form">
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Your Email" required>
-                <input type="text" placeholder="Business Category (e.g. Real Estate, E-com)" required>
-                <textarea rows="5" placeholder="Your Message"></textarea>
-                <button type="submit" class="submit-btn">Send Message</button>
+        <div class="contact-box reveal">
+            <h2 style="margin-bottom: 30px;">Start a Project</h2>
+            <form>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <input type="text" placeholder="Name">
+                    <input type="email" placeholder="Email">
+                </div>
+                <input type="text" placeholder="Business Category">
+                <textarea rows="4" placeholder="How can I help you grow?"></textarea>
+                <button type="submit" class="btn-glow" style="width: 100%;">Ignite My Brand</button>
             </form>
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2024 Sahil Thakur | All Rights Reserved.</p>
-        <div style="margin-top: 20px;">
-            <a href="#" style="color: white; margin: 0 10px;"><i class="fab fa-linkedin"></i></a>
-            <a href="#" style="color: white; margin: 0 10px;"><i class="fab fa-instagram"></i></a>
-        </div>
+    <footer style="padding: 50px; text-align: center; opacity: 0.6;">
+        <p>© 2024 Sahil Thakur | Built with Future Intelligence</p>
     </footer>
 
+    <script>
+        // Simple Scroll Reveal Effect
+        window.addEventListener('scroll', () => {
+            var reveals = document.querySelectorAll('.reveal');
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var revealTop = reveals[i].getBoundingClientRect().top;
+                if (revealTop < windowHeight - 100) {
+                    reveals[i].classList.add('active');
+                }
+            }
+        });
+    </script>
 </body>
 </html>
