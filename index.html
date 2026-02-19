@@ -3,325 +3,278 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sahil Thakur | Strategic Digital Marketing</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
-    
+    <title>Digihills | Next-Gen Digital Marketing</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        :root {
-            --primary: #000000;
-            --secondary: #4a4a4a;
-            --accent: #1e1e1e;
-            --bg: #ffffff;
-            --transition: all 0.8s cubic-bezier(0.2, 1, 0.3, 1);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-        }
-
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap');
+        
         body {
-            background-color: var(--bg);
-            color: var(--primary);
-            overflow-x: hidden;
-            line-height: 1.6;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
         }
 
-        /* --- Reveal Animation Classes --- */
-        .reveal {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: var(--transition);
+        .gradient-text {
+            background: linear-gradient(90deg, #6366f1, #a855f7, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .scale-up {
-            opacity: 0;
-            transform: scale(0.9);
-            transition: var(--transition);
-        }
-
-        .scale-up.active {
-            opacity: 1;
-            transform: scale(1);
-        }
-
-        /* --- Navigation --- */
-        nav {
-            padding: 25px 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: fixed;
-            width: 100%;
-            top: 0;
+        .glass-card {
             background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(20px);
-            z-index: 1000;
-            border-bottom: 1px solid #f0f0f0;
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
 
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.6rem;
-            font-weight: 600;
-            letter-spacing: -0.5px;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--primary);
-            margin-left: 35px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        /* --- Hero Section --- */
-        .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            background: radial-gradient(circle at center, #fafafa 0%, #ffffff 100%);
-            padding: 0 8%;
-        }
-
-        .hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(3.5rem, 8vw, 6.5rem);
-            line-height: 1.05;
-            margin-bottom: 25px;
-            font-weight: 600;
-        }
-
-        .hero p {
-            font-size: 1.25rem;
-            color: var(--secondary);
-            margin-bottom: 45px;
-            max-width: 650px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* --- Buttons --- */
-        .cta-button {
-            display: inline-block;
-            padding: 20px 50px;
-            background: var(--primary);
-            color: white;
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 600;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            border: 1px solid var(--primary);
-        }
-
-        .cta-button:hover {
-            background: transparent;
-            color: var(--primary);
-            transform: translateY(-5px);
-        }
-
-        /* --- Services --- */
-        .section {
-            padding: 140px 8%;
-        }
-
-        .section-tag {
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            font-size: 0.75rem;
-            color: #888;
-            margin-bottom: 20px;
-            display: block;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            margin-top: 60px;
-        }
-
-        .card {
-            padding: 60px 40px;
-            background: #fdfdfd;
-            border: 1px solid #eee;
-            transition: 0.5s;
-        }
-
-        .card:hover {
-            background: #000;
-            color: #fff;
+        .service-card:hover {
             transform: translateY(-10px);
-        }
-
-        .card h3 {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-            font-family: 'Playfair Display', serif;
-        }
-
-        /* --- Experience/Categories --- */
-        .experience {
-            background: #000;
-            color: #fff;
-        }
-
-        .cat-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            margin-top: 50px;
-        }
-
-        .cat-pill {
-            padding: 12px 30px;
-            border: 1px solid rgba(255,255,255,0.2);
-            border-radius: 100px;
-            font-size: 1rem;
-            transition: 0.4s;
-        }
-
-        .cat-pill:hover {
-            border-color: #fff;
-            background: #fff;
-            color: #000;
-        }
-
-        /* --- Contact --- */
-        .contact {
-            text-align: center;
-            background: #fafafa;
-        }
-
-        .contact h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(2.5rem, 5vw, 4.5rem);
-            margin-bottom: 50px;
-        }
-
-        footer {
-            padding: 60px 8%;
-            text-align: center;
-            border-top: 1px solid #eee;
-            font-size: 0.8rem;
-            letter-spacing: 1px;
-            color: #999;
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 3.5rem; }
-            .nav-links { display: none; }
+            transition: all 0.3s ease;
         }
     </style>
 </head>
-<body>
+<body class="bg-slate-50 text-slate-900">
 
-    <nav>
-        <div class="logo">SAHIL THAKUR</div>
-        <div class="nav-links">
-            <a href="#expertise">Expertise</a>
-            <a href="#industries">Industries</a>
-            <a href="#contact">Contact</a>
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/70 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <span class="text-3xl font-extrabold tracking-tight text-slate-900">Digi<span class="text-indigo-600">hills</span></span>
+                </div>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#services" class="font-medium text-slate-600 hover:text-indigo-600 transition">Services</a>
+                    <a href="#process" class="font-medium text-slate-600 hover:text-indigo-600 transition">Process</a>
+                    <a href="#contact" class="bg-indigo-600 text-white px-6 py-2.5 rounded-full font-semibold hover:bg-indigo-700 transition shadow-lg shadow-indigo-200">Get a Proposal</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-slate-600">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
         </div>
     </nav>
 
-    <section class="hero">
-        <div class="hero-content">
-            <h1 class="reveal">Performance <br><em>Driven</em> Results.</h1>
-            <p class="reveal" style="transition-delay: 0.2s;">Transforming brand presence through data-centric digital marketing and innovative AI automation.</p>
-            <div class="reveal" style="transition-delay: 0.4s;">
-                <a href="#contact" class="cta-button">Partner with me</a>
+    <!-- Hero Section -->
+    <header class="pt-32 pb-20 lg:pt-48 lg:pb-32 px-4">
+        <div class="max-w-7xl mx-auto text-center">
+            <span class="inline-block py-1 px-4 rounded-full bg-indigo-50 text-indigo-600 text-sm font-bold tracking-wide mb-6 uppercase">Future-Proof Your Brand</span>
+            <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-8">
+                Scaling Digital Peaks with <br>
+                <span class="gradient-text">Digihills Intelligence</span>
+            </h1>
+            <p class="max-w-2xl mx-auto text-lg text-slate-600 mb-10 leading-relaxed">
+                We blend human creativity with AI-powered analytics to dominate search results, influence markets, and maximize your advertising ROI.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#contact" class="px-8 py-4 bg-indigo-600 text-white rounded-xl font-bold text-lg hover:bg-indigo-700 transition shadow-xl shadow-indigo-200">Start Growing Now</a>
+                <a href="#services" class="px-8 py-4 bg-white text-slate-700 border border-slate-200 rounded-xl font-bold text-lg hover:bg-slate-50 transition">View Our Services</a>
+            </div>
+            
+            <!-- Trust Logotypes (Social Proof) -->
+            <div class="mt-20 pt-10 border-t border-slate-200">
+                <p class="text-sm font-bold text-slate-400 uppercase tracking-widest mb-8">Trusted by industry leaders</p>
+                <div class="flex flex-wrap justify-center gap-8 md:gap-16 opacity-50 grayscale">
+                    <i class="fa-brands fa-google text-4xl"></i>
+                    <i class="fa-brands fa-amazon text-4xl"></i>
+                    <i class="fa-brands fa-meta text-4xl"></i>
+                    <i class="fa-brands fa-shopify text-4xl"></i>
+                    <i class="fa-brands fa-hubspot text-4xl"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl font-bold mb-4">Our Core Expertise</h2>
+                <div class="w-20 h-1.5 bg-indigo-600 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- AI SEO -->
+                <div class="service-card p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:shadow-2xl hover:shadow-indigo-100 transition">
+                    <div class="w-16 h-16 bg-indigo-600 text-white rounded-2xl flex items-center justify-center mb-6 text-2xl">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">AI-Powered SEO</h3>
+                    <p class="text-slate-600 mb-6">Using Large Language Models and data mining to predict search trends before they happen.</p>
+                    <ul class="text-sm space-y-2 text-slate-500">
+                        <li><i class="fa-solid fa-check text-indigo-500 mr-2"></i>Semantic Optimization</li>
+                        <li><i class="fa-solid fa-check text-indigo-500 mr-2"></i>Automated Content Clusters</li>
+                        <li><i class="fa-solid fa-check text-indigo-500 mr-2"></i>SERP Feature Targeting</li>
+                    </ul>
+                </div>
+
+                <!-- Traditional SEO -->
+                <div class="service-card p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:shadow-2xl hover:shadow-purple-100 transition">
+                    <div class="w-16 h-16 bg-purple-600 text-white rounded-2xl flex items-center justify-center mb-6 text-2xl">
+                        <i class="fa-solid fa-magnifying-glass-chart"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Authority SEO</h3>
+                    <p class="text-slate-600 mb-6">Deep technical audits and high-impact backlink strategies to build long-term dominance.</p>
+                    <ul class="text-sm space-y-2 text-slate-500">
+                        <li><i class="fa-solid fa-check text-purple-500 mr-2"></i>Technical Infrastructure</li>
+                        <li><i class="fa-solid fa-check text-purple-500 mr-2"></i>Link Building PR</li>
+                        <li><i class="fa-solid fa-check text-purple-500 mr-2"></i>Local SEO Management</li>
+                    </ul>
+                </div>
+
+                <!-- Paid Media -->
+                <div class="service-card p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:shadow-2xl hover:shadow-pink-100 transition">
+                    <div class="w-16 h-16 bg-pink-600 text-white rounded-2xl flex items-center justify-center mb-6 text-2xl">
+                        <i class="fa-solid fa-rocket"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Performance Paid</h3>
+                    <p class="text-slate-600 mb-6">Aggressive PPC and Social Ad management focused on conversion and lower CPA.</p>
+                    <ul class="text-sm space-y-2 text-slate-500">
+                        <li><i class="fa-solid fa-check text-pink-500 mr-2"></i>Google Search & Display</li>
+                        <li><i class="fa-solid fa-check text-pink-500 mr-2"></i>Social Ads Retargeting</li>
+                        <li><i class="fa-solid fa-check text-pink-500 mr-2"></i>A/B Creative Testing</li>
+                    </ul>
+                </div>
+
+                <!-- Influence Marketing -->
+                <div class="service-card p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:shadow-2xl hover:shadow-blue-100 transition">
+                    <div class="w-16 h-16 bg-blue-600 text-white rounded-2xl flex items-center justify-center mb-6 text-2xl">
+                        <i class="fa-solid fa-users-viewfinder"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Influencer DNA</h3>
+                    <p class="text-slate-600 mb-6">Connecting your brand with creators who share your values for authentic growth.</p>
+                    <ul class="text-sm space-y-2 text-slate-500">
+                        <li><i class="fa-solid fa-check text-blue-500 mr-2"></i>Creator Sourcing</li>
+                        <li><i class="fa-solid fa-check text-blue-500 mr-2"></i>Campaign Orchestration</li>
+                        <li><i class="fa-solid fa-check text-blue-500 mr-2"></i>ROI Attribution</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="section" id="expertise">
-        <span class="section-tag reveal">Capabilities</span>
-        <h2 class="reveal" style="font-family: 'Playfair Display'; font-size: 3rem;">Core Strategies</h2>
-        
-        <div class="grid">
-            <div class="card scale-up">
-                <h3>01. Growth Ads</h3>
-                <p>Strategic Meta and Google Ads campaigns focused on maximizing ROAS and scaling revenue sustainably.</p>
+    <!-- Why Digihills Stats -->
+    <section class="py-20 bg-indigo-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-2 lg:grid-cols-4 gap-12 text-center">
+            <div>
+                <p class="text-4xl md:text-5xl font-extrabold mb-2">250%</p>
+                <p class="text-indigo-200 uppercase tracking-widest text-sm font-bold">Avg. Traffic Growth</p>
             </div>
-            <div class="card scale-up" style="transition-delay: 0.2s;">
-                <h3>02. Technical SEO</h3>
-                <p>Optimizing digital infrastructure to dominate search rankings and capture high-intent organic traffic.</p>
+            <div>
+                <p class="text-4xl md:text-5xl font-extrabold mb-2">$50M+</p>
+                <p class="text-indigo-200 uppercase tracking-widest text-sm font-bold">Ad Spend Managed</p>
             </div>
-            <div class="card scale-up" style="transition-delay: 0.4s;">
-                <h3>03. AI Marketing</h3>
-                <p>Leveraging cutting-edge AI tools to automate content production and optimize conversion funnels.</p>
+            <div>
+                <p class="text-4xl md:text-5xl font-extrabold mb-2">15k+</p>
+                <p class="text-indigo-200 uppercase tracking-widest text-sm font-bold">Influencer Network</p>
+            </div>
+            <div>
+                <p class="text-4xl md:text-5xl font-extrabold mb-2">98%</p>
+                <p class="text-indigo-200 uppercase tracking-widest text-sm font-bold">Client Retention</p>
             </div>
         </div>
     </section>
 
-    <section class="section experience" id="industries">
-        <span class="section-tag reveal">Experience</span>
-        <h2 class="reveal" style="font-family: 'Playfair Display'; font-size: 3rem; color: #fff;">Diverse Industry Portfolio</h2>
-        <p class="reveal" style="color: #ccc; max-width: 600px; margin-top: 20px;">I have successfully delivered growth across various business sectors, adapting strategies to unique market demands.</p>
-        
-        <div class="cat-container">
-            <div class="cat-pill reveal" style="transition-delay: 0.1s;">Real Estate</div>
-            <div class="cat-pill reveal" style="transition-delay: 0.2s;">E-Commerce</div>
-            <div class="cat-pill reveal" style="transition-delay: 0.3s;">Health & Fitness</div>
-            <div class="cat-pill reveal" style="transition-delay: 0.4s;">Tech SaaS</div>
-            <div class="cat-pill reveal" style="transition-delay: 0.5s;">Education</div>
-            <div class="cat-pill reveal" style="transition-delay: 0.6s;">Hospitality</div>
+    <!-- Contact / CTA Section -->
+    <section id="contact" class="py-24">
+        <div class="max-w-5xl mx-auto px-4">
+            <div class="bg-white rounded-[3rem] shadow-2xl overflow-hidden flex flex-col md:flex-row">
+                <div class="bg-indigo-600 p-12 md:w-2/5 text-white flex flex-col justify-between">
+                    <div>
+                        <h2 class="text-3xl font-bold mb-6">Let's build your mountain.</h2>
+                        <p class="text-indigo-100 mb-8">Ready to climb to the top of the search engine hills? Our experts are standing by.</p>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4">
+                            <i class="fa-solid fa-envelope"></i>
+                            <span>growth@digihills.com</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <i class="fa-solid fa-phone"></i>
+                            <span>+1 (555) HILLS-DIGI</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-12 md:w-3/5">
+                    <form id="contactForm" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-bold text-slate-700 mb-2">Full Name</label>
+                                <input type="text" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-600 transition" placeholder="John Doe">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-bold text-slate-700 mb-2">Company Email</label>
+                                <input type="email" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-600 transition" placeholder="john@company.com">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-slate-700 mb-2">Interested Service</label>
+                            <select class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-600 transition">
+                                <option>AI SEO</option>
+                                <option>Traditional SEO</option>
+                                <option>Paid Media / PPC</option>
+                                <option>Influencer Marketing</option>
+                                <option>Full Suite Bundle</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-slate-700 mb-2">How can we help?</label>
+                            <textarea rows="4" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-600 transition" placeholder="Tell us about your goals..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-4 bg-indigo-600 text-white rounded-xl font-bold hover:bg-indigo-700 transition shadow-lg">Send My Proposal</button>
+                    </form>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section class="section contact" id="contact">
-        <div class="reveal">
-            <span class="section-tag">Let's Connect</span>
-            <h2>Ready to scale <br>your business?</h2>
-            <a href="mailto:hello@sahilthakur.com" class="cta-button">Send an Inquiry</a>
+    <!-- Footer -->
+    <footer class="bg-slate-900 py-16 text-slate-400">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8 mb-12">
+                <div class="text-2xl font-extrabold text-white">Digi<span class="text-indigo-400">hills</span></div>
+                <div class="flex gap-8">
+                    <a href="#" class="hover:text-white transition">LinkedIn</a>
+                    <a href="#" class="hover:text-white transition">Twitter</a>
+                    <a href="#" class="hover:text-white transition">Instagram</a>
+                    <a href="#" class="hover:text-white transition">YouTube</a>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-8 text-sm text-center">
+                <p>&copy; 2024 Digihills Agency. All Rights Reserved. Navigating digital summits with intelligence.</p>
+            </div>
         </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2026 SAHIL THAKUR. ALL RIGHTS RESERVED. STRATEGY & GROWTH.</p>
     </footer>
 
     <script>
-        // Intersection Observer for Scroll Animations
-        const observerOptions = {
-            threshold: 0.15
-        };
+        // Simple Form Submission Logic
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = e.target.querySelector('button');
+            const originalText = btn.innerText;
+            
+            btn.innerText = 'Sending...';
+            btn.disabled = true;
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.reveal, .scale-up').forEach((el) => {
-            observer.observe(el);
+            // Simulate API Call
+            setTimeout(() => {
+                btn.innerText = 'Message Sent! Check Your Email.';
+                btn.style.backgroundColor = '#10b981'; // Green
+                e.target.reset();
+                
+                setTimeout(() => {
+                    btn.innerText = originalText;
+                    btn.style.backgroundColor = '';
+                    btn.disabled = false;
+                }, 3000);
+            }, 1500);
         });
 
-        // Smooth Scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
+        // Mobile Menu (Placeholder for actual toggle logic)
+        document.getElementById('mobile-menu-button').addEventListener('click', () => {
+            alert('Mobile navigation would slide in here.');
         });
     </script>
+
 </body>
 </html>
